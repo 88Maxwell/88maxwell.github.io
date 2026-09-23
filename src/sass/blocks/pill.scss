@@ -2,7 +2,9 @@
 @use "../mixins" as *;
 
 .pill {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
     padding: 12px 24px;
     border-radius: 999px;
     font-size: 0.95rem;
@@ -14,6 +16,12 @@
         background: $glass-hover;
         border-color: rgba($glow, 0.5);
         box-shadow: 0 0 24px rgba($glow, 0.15);
+    }
+
+    &__icon {
+        width: 18px;
+        height: 18px;
+        fill: currentColor;
     }
 
     &--accent {

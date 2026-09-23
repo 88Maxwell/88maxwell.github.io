@@ -2,6 +2,12 @@
 @use "../mixins" as *;
 
 .contacts {
+    // Tall enough to cross the viewport middle, so the nav scrollspy can mark it active at page end
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
 
     &__title {
