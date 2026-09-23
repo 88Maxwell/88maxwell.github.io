@@ -1,0 +1,9 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.footer {
+    padding: 32px 16px 48px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: $muted;
+}

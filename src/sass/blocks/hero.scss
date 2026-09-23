@@ -1,0 +1,101 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+// Tall wrapper + sticky stage: scrolling through the hero focuses the photo
+// and fills the name, like oftheoak.co.uk.
+.hero {
+    height: 200vh;
+    view-timeline: --hero block;
+
+    &__stage {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        height: 100svh;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    &__bg {
+        position: absolute;
+        inset: 0;
+        background: url("../../img/forest.jpg") center / cover no-repeat;
+        filter: brightness(0.7);
+
+        &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 50%, $bg);
+        }
+    }
+
+    &__content {
+        position: relative;
+        max-width: 760px;
+        padding: 0 16px;
+    }
+
+    &__eyebrow {
+        margin-bottom: 16px;
+        font-size: 0.85rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: $muted;
+    }
+
+    &__title {
+        font-size: clamp(3rem, 11vw, 7.5rem);
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: -0.03em;
+    }
+
+    &__lead {
+        margin: 24px auto 32px;
+        max-width: 520px;
+        color: rgba($font, 0.85);
+    }
+
+    &__actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    &__hint {
+        position: absolute;
+        bottom: 32px;
+        font-size: 0.75rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: $muted;
+    }
+
+    @include scroll-driven {
+        &__bg {
+            animation: focus-in linear both;
+            animation-timeline: --hero;
+            animation-range: contain 0% contain 60%;
+        }
+
+        &__title {
+            color: transparent;
+            background: linear-gradient(90deg, $font 50%, rgba($font, 0.25) 50%) 100% 0 / 200% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: fill-text linear both;
+            animation-timeline: --hero;
+            animation-range: contain 0% contain 50%;
+        }
+
+        &__hint {
+            animation: fade-out linear both;
+            animation-timeline: --hero;
+            animation-range: contain 0% contain 15%;
+        }
+    }
+}

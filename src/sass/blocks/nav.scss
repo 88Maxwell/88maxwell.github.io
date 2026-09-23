@@ -1,0 +1,52 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.nav {
+    position: fixed;
+    top: 16px;
+    left: 50%;
+    z-index: 10;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 8px 8px 8px 20px;
+    border-radius: 999px;
+    @include glass;
+
+    &__brand {
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-decoration: none;
+    }
+
+    &__links {
+        display: flex;
+        gap: 4px;
+    }
+
+    &__link {
+        display: block;
+        padding: 6px 14px;
+        border-radius: 999px;
+        font-size: 0.85rem;
+        color: $muted;
+        text-decoration: none;
+        transition: color 0.2s, background-color 0.2s;
+
+        &:hover {
+            color: $font;
+            background: $glass-hover;
+        }
+    }
+
+    @include mobile {
+        gap: 8px;
+        padding-left: 14px;
+
+        &__link {
+            padding: 6px 8px;
+            font-size: 0.75rem;
+        }
+    }
+}

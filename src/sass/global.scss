@@ -1,18 +1,47 @@
-html,
-body {
-    margin: 0px;
-    padding: 0px;
-    height: 100%;
-    overflow-x: hidden;
-    font: {
-        family: "JosefinSans";
-        size: 18px;
-        weight: 400;
-    }
-    color: $font;
+@use "variables" as *;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
-@font-face {
-    font-family: "JosefinSans";
-    src: url("../fonts/JosefinSans-Regular.ttf");
+html {
+    scroll-behavior: smooth;
+    background: $bg;
+}
+
+body {
+    margin: 0;
+    font-family: $font-family;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.55;
+    color: $font;
+    background: $bg;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+ol {
+    margin: 0;
+}
+
+ul,
+ol {
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    color: inherit;
+}
+
+:focus-visible {
+    outline: 2px solid $glow;
+    outline-offset: 3px;
 }

@@ -1,11 +1,10 @@
 resume.code-workspace
 node_modules/
 .vscode/
-.babelrc
 build/
-__build/
 yarn-error.log
 package-lock.json
-.cache
+.DS_Store
 linkedin-Profile.pdf
+Profile.pdf
 SOLTYK-MAKSYM-FE-CV-2024-05-14.pdf

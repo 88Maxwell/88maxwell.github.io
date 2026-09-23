@@ -1,21 +1,20 @@
 {
     "name": "88maxwell",
-    "version": "3.4.0",
-    "main": "/src/js/index.js",
+    "version": "4.0.0",
+    "private": true,
+    "type": "module",
     "author": "88Maxwell",
-    "license": "",
     "repository": "https://github.com/88Maxwell/88Maxwell.github.io",
-    "homepage": "https://88Maxwell.github.com",
+    "homepage": "https://88Maxwell.github.io",
     "scripts": {
-        "build": "rm -rf build && parcel build src/index.html -d build --public-url ./",
-        "dev": "parcel --port 8000 src/index.html -d __build",
-        "serve": "serve -s build",
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
         "deploy": "NODE_DEBUG=gh-pages gh-pages -b master -d build"
     },
     "devDependencies": {
-        "gh-pages": "^6.0.0",
-        "parcel-bundler": "^1.12.5",
-        "sass": "^1.69.3",
-        "serve": "^14.2.1"
+        "gh-pages": "^6.3.0",
+        "sass": "^1.105.0",
+        "vite": "^8.3.0"
     }
 }

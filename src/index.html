@@ -3,74 +3,245 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <meta name="theme-color" content="#000000" />
-        <meta name="Description" content="Personal page of Maksym Soltyk" />
-        <title>Soltyk Maksym Yuriyovych Page</title>
+        <meta name="theme-color" content="#0e1a17" />
+        <meta
+            name="description"
+            content="Maksym Soltyk — Frontend Engineer (React / React Native) from Kyiv with 8+ years of experience."
+        />
+        <title>Maksym Soltyk — Frontend Engineer</title>
 
         <link rel="canonical" href="https://88Maxwell.github.io" />
-        <link rel="manifest" href="manifest.webmanifest" />
-        <link rel="apple-touch-icon" href="img/cv192.png" />
-        <link rel="shortcut icon" href="img/cv128.png" />
-        <link rel="stylesheet" href="sass/index.scss" />
+        <link rel="manifest" href="/manifest.webmanifest" />
+        <link rel="apple-touch-icon" href="/img/cv192.png" />
+        <link rel="icon" href="/img/cv128.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="./sass/index.scss" />
     </head>
 
-    <body>
-        <div class="app app--bg">
-            <main class="profile profile--border">
-                <section class="profile__panel">
-                    <div class="profile__photo"></div>
-                    <h1 class="profile__heading">
-                        Soltyk Maksym Yuriyovych
-                    </h1>
-                </section>
-                <section class="contacts">
-                    <div class="contacts__social">
-                        <a
-                            href="https://www.facebook.com/maxwell.soltyk"
-                            class="logo logo--facebook"
-                            target="_blank"
-                            aria-label="facebook"
-                        ></a>
-                        <a
-                            href="https://www.linkedin.com/in/maksym-soltyk-881499162/"
-                            class="logo logo--linkedin"
-                            target="_blank"
-                            aria-label="linkedin"
-                        ></a>
-                        <a
-                            href="https://github.com/88Maxwell"
-                            target="_blank"
-                            class="logo logo--github"
-                            aria-label="github"
-                        ></a>
-                    </div>
-                    <div class="contacts__official">
-                        <section class="record">
-                            <span class="record__label">Send me a letter to my email: </span>
-                            <div>
-                                <a class="record__link" target="_blank" href="mailto:maxwell88soltyk@gmail.com">
-                                    maxwell88soltyk@gmail.com
-                                </a>
-                            </div>
-                        </section>
+    <body class="app">
+        <nav class="nav" aria-label="Main">
+            <a class="nav__brand" href="#top">MS</a>
+            <ul class="nav__links">
+                <li><a class="nav__link" href="#about">About</a></li>
+                <li><a class="nav__link" href="#experience">Experience</a></li>
+                <li><a class="nav__link" href="#education">Education</a></li>
+                <li><a class="nav__link" href="#contact">Contact</a></li>
+            </ul>
+        </nav>
 
-                        <section class="record">
-                            <span class="record__label">Or look my CV:</span>
-                            <a
-                                class="record__link"
-                                target="_blank"
-                                href="https://drive.google.com/file/d/1i_HgxNjdlHxqAxDQMzwuw1qDsTilp1UU/view?usp=drive_link"
-                            >
-                                Curriculum Vitæ
-                            </a>
-                        </section>
+        <header class="hero" id="top">
+            <div class="hero__stage">
+                <div class="hero__bg" role="img" aria-label="Sunlight through a dark forest"></div>
+                <div class="hero__content">
+                    <p class="hero__eyebrow">Frontend Engineer · React / React Native</p>
+                    <h1 class="hero__title">Maksym Soltyk</h1>
+                    <p class="hero__lead">
+                        8+ years building accessible, user-friendly interfaces that combine function and aesthetics.
+                        Kyiv, Ukraine.
+                    </p>
+                    <div class="hero__actions">
+                        <a class="pill pill--accent" href="#experience">View experience</a>
+                        <a
+                            class="pill"
+                            target="_blank"
+                            rel="noopener"
+                            href="https://drive.google.com/file/d/1i_HgxNjdlHxqAxDQMzwuw1qDsTilp1UU/view?usp=drive_link"
+                        >
+                            Curriculum Vitæ
+                        </a>
                     </div>
-                </section>
-            </main>
-        </div>
-        <script type="text/javascript">
-            if (!navigator.serviceWorker.controller) {
+                </div>
+                <span class="hero__hint" aria-hidden="true">Scroll</span>
+            </div>
+        </header>
+
+        <main>
+            <section class="section about" id="about">
+                <div class="about__photo" role="img" aria-label="Portrait of Maksym Soltyk"></div>
+                <div>
+                    <p class="section__eyebrow">About</p>
+                    <p class="about__text">
+                        Hi, I'm Maksym — a frontend engineer who loves clean, readable code and interfaces people
+                        enjoy using. A Master's in Mathematics taught me to think in structures, and I carry a
+                        solution all the way: from idea, design and business goals to analytics, frontend, backend
+                        and QA.
+                    </p>
+                    <p class="about__aside">Off-screen: walks with my dog, plants, books and music.</p>
+                </div>
+            </section>
+
+            <section class="section" id="experience">
+                <p class="section__eyebrow">Experience</p>
+                <h2 class="section__title">Where I've worked</h2>
+
+                <ol class="timeline">
+                    <li class="timeline__item job">
+                        <p class="job__period">Aug 2024 — Present</p>
+                        <div class="job__card">
+                            <h3 class="job__role">Frontend Engineer (React / React Native)</h3>
+                            <p class="job__company">Booknet · Kyiv</p>
+                            <ul class="job__stack">
+                                <li class="tag">React</li>
+                                <li class="tag">React Native</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="timeline__item job">
+                        <p class="job__period">Sep 2021 — Apr 2024</p>
+                        <div class="job__card">
+                            <h3 class="job__role">Frontend Engineer</h3>
+                            <p class="job__company">Genesis Tech · Codefinity &amp; OBRIO</p>
+                            <ul class="job__points">
+                                <li>
+                                    <strong>Codefinity:</strong> migrated a large legacy codebase from React 16 to 18
+                                    and Next 12 to 14; built A/B test features and RxJS state management.
+                                </li>
+                                <li>
+                                    <strong>OBRIO:</strong> CRM with user management and expert chat. Metric-driven
+                                    work on chat drop-off grew revenue by 5% per month.
+                                </li>
+                                <li>Automated PR lint checks, drove refactoring, process and project design.</li>
+                            </ul>
+                            <ul class="job__stack">
+                                <li class="tag">TypeScript</li>
+                                <li class="tag">React</li>
+                                <li class="tag">Next.js</li>
+                                <li class="tag">RxJS</li>
+                                <li class="tag">Redux Toolkit</li>
+                                <li class="tag">MUI</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="timeline__item job">
+                        <p class="job__period">Aug 2020 — Aug 2021</p>
+                        <div class="job__card">
+                            <h3 class="job__role">Frontend Engineer</h3>
+                            <p class="job__company">S-PRO · Kyiv</p>
+                            <ul class="job__stack">
+                                <li class="tag">TypeScript</li>
+                                <li class="tag">React</li>
+                                <li class="tag">Redux</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="timeline__item job">
+                        <p class="job__period">Sep 2019 — Jun 2020</p>
+                        <div class="job__card">
+                            <h3 class="job__role">Full Stack Engineer</h3>
+                            <p class="job__company">Voypost · Remote</p>
+                            <ul class="job__points">
+                                <li>Tests and documentation for a legacy microservices codebase.</li>
+                                <li>New features and redesign of a job-satisfaction product for managers.</li>
+                                <li>React Native app for an IoT project over BLE.</li>
+                            </ul>
+                            <ul class="job__stack">
+                                <li class="tag">React</li>
+                                <li class="tag">React Native</li>
+                                <li class="tag">Apollo</li>
+                                <li class="tag">Node.js</li>
+                                <li class="tag">Jest</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="timeline__item job">
+                        <p class="job__period">Aug 2018 — Dec 2018</p>
+                        <div class="job__card">
+                            <h3 class="job__role">Junior Full Stack Engineer</h3>
+                            <p class="job__company">WebbyLab · Kyiv</p>
+                            <ul class="job__points">
+                                <li>Features and E2E tests for biology, crypto and healthcare projects.</li>
+                            </ul>
+                            <ul class="job__stack">
+                                <li class="tag">React</li>
+                                <li class="tag">Redux</li>
+                                <li class="tag">Express</li>
+                                <li class="tag">Puppeteer</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="timeline__item job">
+                        <p class="job__period">Jan 2018 — Aug 2018</p>
+                        <div class="job__card">
+                            <h3 class="job__role">Frontend Developer</h3>
+                            <p class="job__company">Freelance · Kyiv</p>
+                            <ul class="job__points">
+                                <li>Client side and admin panel for an airbrushing studio.</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ol>
+            </section>
+
+            <section class="section" id="education">
+                <p class="section__eyebrow">Education</p>
+                <h2 class="section__title">Learning never stops</h2>
+
+                <ul class="creds">
+                    <li class="creds__item">
+                        <h3 class="creds__name">M.A. Mathematics</h3>
+                        <p class="creds__from">Taras Shevchenko National University of Kyiv · 2019 — 2021</p>
+                    </li>
+                    <li class="creds__item">
+                        <h3 class="creds__name">B.A. Mathematics</h3>
+                        <p class="creds__from">Taras Shevchenko National University of Kyiv · 2015 — 2019</p>
+                    </li>
+                    <li class="creds__item">
+                        <h3 class="creds__name">KCD Epic React</h3>
+                        <p class="creds__from">Kent C. Dodds · 5 certificates · 2023</p>
+                    </li>
+                    <li class="creds__item">
+                        <h3 class="creds__name">Genesis Soft Skill School 7.0</h3>
+                        <p class="creds__from">Genesis Tech · 2023</p>
+                    </li>
+                    <li class="creds__item">
+                        <h3 class="creds__name">JS &amp; React fwdays 2021</h3>
+                        <p class="creds__from">fwdays · conference member</p>
+                    </li>
+                    <li class="creds__item">
+                        <h3 class="creds__name">JavaScript Algorithms and Data Structures</h3>
+                        <p class="creds__from">freeCodeCamp · 2020</p>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="section contacts" id="contact">
+                <p class="section__eyebrow">Contact</p>
+                <h2 class="contacts__title">Let's build something good.</h2>
+                <a class="contacts__email" href="mailto:maxwell88soltyk@gmail.com">maxwell88soltyk@gmail.com</a>
+                <div class="contacts__links">
+                    <a class="pill" target="_blank" rel="noopener" href="https://t.me/maxwell88soltyk">Telegram</a>
+                    <a class="pill" target="_blank" rel="noopener" href="https://github.com/88Maxwell">GitHub</a>
+                    <a
+                        class="pill"
+                        target="_blank"
+                        rel="noopener"
+                        href="https://www.linkedin.com/in/maksym-soltyk-881499162/"
+                        >LinkedIn</a
+                    >
+                    <a class="pill" target="_blank" rel="noopener" href="https://www.facebook.com/maxwell.soltyk"
+                        >Facebook</a
+                    >
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">© 2026 Maksym Soltyk</footer>
+
+        <script type="module">
+            // Spotlight follows the cursor; read by .app::before
+            addEventListener("pointermove", (e) => {
+                document.body.style.setProperty("--x", `${e.clientX}px`);
+                document.body.style.setProperty("--y", `${e.clientY}px`);
+            });
+
+            if ("serviceWorker" in navigator && !navigator.serviceWorker.controller) {
                 navigator.serviceWorker.register("/pwabuilder-sw.js", { scope: "/" });
             }
         </script>

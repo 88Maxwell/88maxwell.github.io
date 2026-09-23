@@ -1,0 +1,27 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.pill {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    @include glass;
+
+    &:hover {
+        background: $glass-hover;
+        border-color: rgba($glow, 0.5);
+        box-shadow: 0 0 24px rgba($glow, 0.15);
+    }
+
+    &--accent {
+        background: rgba($accent, 0.7);
+        border-color: rgba($glow, 0.35);
+
+        &:hover {
+            background: $accent;
+        }
+    }
+}

@@ -1,0 +1,62 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.about {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    align-items: center;
+    gap: 72px;
+
+    &__photo {
+        position: relative;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: url("../../img/profile_photo.jpg") center 30% / cover no-repeat;
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: -6px;
+            z-index: -1;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg, transparent, rgba($glow, 0.7), transparent 60%);
+
+            @media (prefers-reduced-motion: no-preference) {
+                animation: rotate 8s linear infinite;
+            }
+        }
+    }
+
+    &__text {
+        font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+        font-weight: 300;
+        line-height: 1.45;
+    }
+
+    &__aside {
+        margin-top: 24px;
+        color: $muted;
+    }
+
+    @include mobile {
+        grid-template-columns: 1fr;
+        gap: 40px;
+
+        &__photo {
+            width: 180px;
+        }
+    }
+
+    // Text brightens line by line as it scrolls into view
+    @include scroll-driven {
+        &__text {
+            color: transparent;
+            background: linear-gradient(180deg, $font 40%, rgba($font, 0.2) 60%) 0 100% / 100% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: fill-text linear both;
+            animation-timeline: view();
+            animation-range: entry 40% cover 55%;
+        }
+    }
+}

@@ -1,29 +1,30 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
 .app {
-    box-sizing: border-box;
-    height: 100%;
-    padding: 15px;
-   
-    &:before {
+    position: relative;
+    overflow-x: clip;
+
+    // Cursor spotlight; --x/--y are set from index.html
+    &::before {
         content: "";
-        display: block;
         position: fixed;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -10;
-        background-image: url("../img/Top-Triangle-Wallpaper.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+        background: radial-gradient(
+            600px circle at var(--x, 50%) var(--y, -300px),
+            rgba($glow, 0.1),
+            transparent 60%
+        );
+
+        @media (hover: none) {
+            display: none;
+        }
     }
 
-    @include mobile {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        
-        @include isGridSupported {
-            grid-template-columns: 1fr;
-        }
+    > :not(.nav) {
+        position: relative;
+        z-index: 2;
     }
 }
