@@ -11,7 +11,7 @@
         position: relative;
         aspect-ratio: 1;
         border-radius: 50%;
-        background: url("../../img/profile_photo.jpg") center 30% / cover no-repeat;
+        background: url("../../img/profile_photo.jpg") center / cover no-repeat;
 
         &::before {
             content: "";
