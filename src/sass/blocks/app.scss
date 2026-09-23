@@ -23,7 +23,7 @@
         }
     }
 
-    > :not(.nav) {
+    > :not(.nav, .skip) {
         position: relative;
         z-index: 2;
     }

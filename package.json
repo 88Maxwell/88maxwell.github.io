@@ -10,7 +10,8 @@
         "dev": "vite",
         "build": "vite build",
         "preview": "vite preview",
-        "deploy": "NODE_DEBUG=gh-pages gh-pages -b master -d build"
+        "deploy": "NODE_DEBUG=gh-pages gh-pages -b master -d build",
+        "snapshots": "sh scripts/snapshots.sh"
     },
     "devDependencies": {
         "gh-pages": "^6.3.0",

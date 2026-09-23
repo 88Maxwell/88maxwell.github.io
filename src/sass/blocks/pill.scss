@@ -9,7 +9,7 @@
     border-radius: 999px;
     font-size: 0.95rem;
     text-decoration: none;
-    transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s, translate 0.25s ease-out;
     @include glass;
 
     &:hover {

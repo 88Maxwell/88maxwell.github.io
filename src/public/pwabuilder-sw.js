@@ -1,13 +1,17 @@
 // This is the "Offline copy of assets" service worker
 
-const CACHE = "pwabuilder-offline";
+// The cache name suffix is replaced with a timestamp on every build (see vite.config.js)
+const CACHE = "pwabuilder-offline-__BUILD__";
 
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/7.3.0/workbox-sw.js");
 
-self.addEventListener("message", (event) => {
-    if (event.data && event.data.type === "SKIP_WAITING") {
-        self.skipWaiting();
-    }
+self.skipWaiting();
+workbox.core.clientsClaim();
+
+self.addEventListener("activate", (event) => {
+    event.waitUntil(
+        caches.keys().then((keys) => Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k)))),
+    );
 });
 
 workbox.routing.registerRoute(

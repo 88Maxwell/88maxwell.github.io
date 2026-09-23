@@ -17,9 +17,50 @@
         line-height: 1.1;
     }
 
+    &__mail {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin: 28px 0 40px;
+        position: relative;
+    }
+
+    &__copy {
+        display: grid;
+        place-items: center;
+        width: 36px;
+        height: 36px;
+        padding: 0;
+        border-radius: 50%;
+        color: $muted;
+        cursor: pointer;
+        @include glass;
+
+        svg {
+            width: 16px;
+            height: 16px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+        }
+
+        &:hover {
+            color: $font;
+            border-color: rgba($glow, 0.5);
+        }
+    }
+
+    &__status {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, 8px);
+        font-size: 0.8rem;
+        color: $glow;
+    }
+
     &__email {
         display: inline-block;
-        margin: 28px 0 40px;
         font-size: clamp(1.1rem, 3vw, 1.6rem);
         color: $glow;
         text-decoration: none;

@@ -10,9 +10,10 @@
         padding: 24px;
         border-radius: $radius;
         @include glass;
-        transition: border-color 0.25s, background-color 0.25s;
+        transition: border-color 0.25s, background-color 0.25s, translate 0.25s ease-out;
 
         &:hover {
+            translate: 0 -4px;
             background: $glass-hover;
             border-color: rgba($glow, 0.4);
         }

@@ -19,7 +19,8 @@
         padding: 24px 28px;
         border-radius: $radius;
         @include glass;
-        transition: border-color 0.25s, background-color 0.25s, box-shadow 0.25s;
+        transform: perspective(800px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+        transition: border-color 0.25s, background-color 0.25s, box-shadow 0.25s, transform 0.3s ease-out;
 
         &:hover {
             background: $glass-hover;

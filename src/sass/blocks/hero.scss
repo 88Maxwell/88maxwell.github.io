@@ -22,6 +22,10 @@
         position: absolute;
         inset: 0;
         background: url("../../img/forest.jpg") center / cover no-repeat;
+        background-image: image-set(
+            url("../../img/forest.avif") type("image/avif"),
+            url("../../img/forest.jpg") type("image/jpeg")
+        );
         filter: brightness(0.7);
 
         &::after {
