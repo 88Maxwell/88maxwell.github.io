@@ -1,1 +1,36 @@
-{"short_name":"Maksym Soltyk page","name":"Maksym Soltyk page","start_url":"/index.html","icons":[{"src":"cv512.48fe2be8.png","sizes":"512x512","type":"image/png"},{"src":"cv256.4640825f.png","sizes":"256x256","type":"image/png"},{"src":"cv192.b3a097f4.png","sizes":"192x192","type":"image/png"},{"src":"cv128.02e42035.png","sizes":"128x128","type":"image/png"}],"display":"minimal-ui","theme_color":"#000000","background_color":"#ffffff","dir":"ltr","lang":"en","description":"","orientation":"any","related_applications":[],"prefer_related_applications":false}
+{
+    "short_name": "Maksym Soltyk page",
+    "name": "Maksym Soltyk page",
+    "start_url": "/index.html",
+    "icons": [
+        {
+            "src": "img/cv512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "img/cv256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "img/cv192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "img/cv128.png",
+            "sizes": "128x128",
+            "type": "image/png"
+        }
+    ],
+    "display": "minimal-ui",
+    "theme_color": "#0e1a17",
+    "background_color": "#0e1a17",
+    "dir": "ltr",
+    "lang": "en",
+    "description": "Maksym Soltyk — Frontend Engineer (React / React Native)",
+    "orientation": "any",
+    "related_applications": [],
+    "prefer_related_applications": false
+}
