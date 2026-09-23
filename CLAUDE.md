@@ -28,7 +28,7 @@ There is no lint or test command.
 - `src/sass/variables.scss` holds the forest-green palette (`$bg`, `$font`, `$muted`, `$accent`, `$glow`, `$glass*`) — reuse these rather than hardcoding colors.
 - Animations:
   - Scroll-driven effects use native CSS `animation-timeline` (`view()` or the hero's named `--hero` timeline). Wrap them in the `scroll-driven` mixin so unsupported browsers and `prefers-reduced-motion` users get the static final state.
-  - The hero is a 200vh wrapper with a sticky 100vh stage. Its photo focuses and its name fills while you scroll through it.
+  - The hero is a 200vh wrapper with a sticky 100vh stage. Its photo focuses and its name fades in while you scroll through it.
   - The cursor spotlight is `.app::before`, driven by `--x`/`--y` that the inline script in `index.html` sets on `pointermove`.
 - `src/public/pwabuilder-sw.js` (PWABuilder, Workbox from CDN) caches all routes stale-while-revalidate, so returning visitors see the previous deploy once before the update.
 - Resume content comes from local, gitignored PDFs in the repo root (LinkedIn export `Profile.pdf`, older CV `SOLTYK-MAKSYM-FE-CV-*.pdf`).

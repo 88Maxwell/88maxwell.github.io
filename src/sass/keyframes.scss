@@ -21,6 +21,12 @@
     }
 }
 
+@keyframes fade-in {
+    from {
+        opacity: 0.25;
+    }
+}
+
 @keyframes fade-out {
     to {
         opacity: 0;

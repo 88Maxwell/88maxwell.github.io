@@ -2,7 +2,7 @@
 @use "../mixins" as *;
 
 // Tall wrapper + sticky stage: scrolling through the hero focuses the photo
-// and fills the name, like oftheoak.co.uk.
+// and fades the name in, like oftheoak.co.uk.
 .hero {
     height: 200vh;
     view-timeline: --hero block;
@@ -83,11 +83,7 @@
         }
 
         &__title {
-            color: transparent;
-            background: linear-gradient(90deg, $font 50%, rgba($font, 0.25) 50%) 100% 0 / 200% 100%;
-            -webkit-background-clip: text;
-            background-clip: text;
-            animation: fill-text linear both;
+            animation: fade-in linear both;
             animation-timeline: --hero;
             animation-range: contain 0% contain 50%;
         }
