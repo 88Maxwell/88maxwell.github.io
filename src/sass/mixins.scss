@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 @mixin mobile() {
     @media screen and (max-width: 779px) {
         @content;
@@ -10,11 +12,19 @@
     }
 }
 
-@mixin isGridSupported($grid:true) {
-    @supports (display: grid) {
-        @if $grid == true {
-            display: grid;            
+// Scroll-driven animations only where supported and motion is welcome;
+// elsewhere everything simply renders in its final state.
+@mixin scroll-driven() {
+    @supports (animation-timeline: view()) {
+        @media (prefers-reduced-motion: no-preference) {
+            @content;
         }
-        @content;
     }
+}
+
+@mixin glass() {
+    background: $glass;
+    border: 1px solid $glass-border;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }

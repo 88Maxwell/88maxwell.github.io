@@ -1,0 +1,62 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.timeline {
+    position: relative;
+    display: grid;
+    gap: 40px;
+
+    // The rail: drawn as the list scrolls through the viewport
+    &::before {
+        content: "";
+        position: absolute;
+        top: 8px;
+        bottom: 8px;
+        left: 190px;
+        width: 1px;
+        background: linear-gradient($glow, rgba($glow, 0.1));
+        transform-origin: top;
+    }
+
+    &__item {
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 30px;
+            left: 185px;
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: $bg;
+            border: 2px solid $glow;
+            box-shadow: 0 0 12px rgba($glow, 0.6);
+        }
+    }
+
+    @include mobile {
+        &::before {
+            left: 5px;
+        }
+
+        &__item::before {
+            top: 4px;
+            left: 0;
+        }
+    }
+
+    @include scroll-driven {
+        &::before {
+            animation: grow-y linear both;
+            animation-timeline: view();
+            animation-range: entry 20% cover 70%;
+        }
+
+        &__item {
+            animation: fade-up linear both;
+            animation-timeline: view();
+            animation-range: entry 0% entry 90%;
+        }
+    }
+}

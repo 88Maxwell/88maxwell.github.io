@@ -1,0 +1,92 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.job {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 80px;
+
+    &__period {
+        padding-top: 24px;
+        font-size: 0.85rem;
+        color: $muted;
+        text-align: right;
+        white-space: nowrap;
+        font-variant-numeric: tabular-nums;
+    }
+
+    &__card {
+        padding: 24px 28px;
+        border-radius: $radius;
+        @include glass;
+        transform: perspective(800px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+        transition: border-color 0.25s, background-color 0.25s, box-shadow 0.25s, transform 0.3s ease-out;
+
+        &:hover {
+            background: $glass-hover;
+            border-color: rgba($glow, 0.4);
+            box-shadow: 0 0 40px rgba($glow, 0.08);
+        }
+    }
+
+    &__role {
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+
+    &__company {
+        margin-top: 2px;
+        color: $glow;
+        font-size: 0.95rem;
+    }
+
+    &__points {
+        margin-top: 16px;
+        display: grid;
+        gap: 8px;
+        font-size: 0.95rem;
+        color: rgba($font, 0.8);
+
+        li {
+            position: relative;
+            padding-left: 18px;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0.7em;
+                left: 0;
+                width: 6px;
+                height: 1px;
+                background: $muted;
+            }
+        }
+
+        strong {
+            font-weight: 500;
+            color: $font;
+        }
+    }
+
+    &__stack {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    @include mobile {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding-left: 28px;
+
+        &__period {
+            padding-top: 0;
+            text-align: left;
+        }
+
+        &__card {
+            padding: 20px;
+        }
+    }
+}

@@ -25,11 +25,11 @@
         }
     ],
     "display": "minimal-ui",
-    "theme_color": "#000000",
-    "background_color": "#ffffff",
+    "theme_color": "#0e1a17",
+    "background_color": "#0e1a17",
     "dir": "ltr",
     "lang": "en",
-    "description": "",
+    "description": "Maksym Soltyk — Frontend Engineer (React / React Native)",
     "orientation": "any",
     "related_applications": [],
     "prefer_related_applications": false

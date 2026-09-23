@@ -1,25 +1,13 @@
-$font: #fff;
-$sec-font: #ddd;
+$bg: #0e1a17;
+$bg-deep: #08110f;
+$glass: rgba(246, 246, 246, 0.05);
+$glass-hover: rgba(246, 246, 246, 0.09);
+$glass-border: rgba(237, 239, 246, 0.14);
 
-$link: #002956;
-$link-hover: #03458b;
+$font: #edeff6;
+$muted: #9fb3aa;
+$accent: #03674f;
+$glow: #6fcf97;
 
-$success: #28a745;
-$success-hover: #218838;
-
-$primary: #007bff;
-$primary-hover: #0069d9;
-
-$secondary: #fff;
-
-$glass-background: #5fa0cf;
-
-
-$info: #17a2b8;
-$info-hover: #138496;
-
-$danger: #dc3545;
-$danger-hover: #c82333;
-
-$warning: #ffc107;
-$warning-hover: #e0a800;
+$font-family: "Geist", system-ui, -apple-system, sans-serif;
+$radius: 20px;

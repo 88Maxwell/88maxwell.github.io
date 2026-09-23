@@ -1,0 +1,219 @@
+@use "variables" as *;
+
+// Printing (or "Save as PDF") gives a plain A4 resume; also used to build /cv.pdf
+@media print {
+    @page {
+        size: A4;
+        margin: 14mm 14mm;
+    }
+
+    html,
+    body {
+        background: #fff;
+        color: #111;
+        font-size: 11pt;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+        text-shadow: none !important;
+    }
+
+    .app::before,
+    .nav,
+    .skip,
+    .hero__bg,
+    .hero__hint,
+    .hero__actions,
+    .about__photo,
+    .about__aside,
+    .contacts__copy,
+    .contacts__status,
+    .contacts__title,
+    .timeline::before,
+    .timeline__item::before,
+    .footer {
+        display: none !important;
+    }
+
+    .hero {
+        height: auto;
+
+        &__stage {
+            position: static;
+            height: auto;
+            display: block;
+            text-align: left;
+        }
+
+        &__content {
+            max-width: none;
+            padding: 0;
+        }
+
+        &__eyebrow {
+            margin: 0 0 4pt;
+            color: $accent;
+        }
+
+        &__title {
+            font-size: 26pt;
+            color: #111;
+        }
+
+        &__lead {
+            margin: 6pt 0 0;
+            max-width: none;
+            color: #333;
+        }
+    }
+
+    // Contacts go to the top of the printed resume
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contacts {
+        order: -1;
+    }
+
+    .job__points strong {
+        color: #111;
+    }
+
+    .section {
+        max-width: none;
+        margin: 0;
+        padding: 14pt 0 0;
+
+        &__eyebrow {
+            display: none;
+        }
+
+        &__title {
+            margin-bottom: 8pt;
+            font-size: 14pt;
+            font-weight: 600;
+            color: $accent;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 3pt;
+        }
+    }
+
+    .about {
+        display: block;
+
+        &__text {
+            font-size: 11pt;
+            font-weight: 400;
+            color: #111 !important;
+            background: none !important;
+        }
+    }
+
+    .skills,
+    .creds {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6pt 16pt;
+    }
+
+    .skills__group,
+    .creds__item,
+    .job__card {
+        padding: 0;
+        border: 0;
+        background: none;
+        transform: none;
+    }
+
+    .skills__name {
+        margin-bottom: 3pt;
+        color: #555;
+    }
+
+    .timeline {
+        gap: 10pt;
+    }
+
+    .job {
+        grid-template-columns: 90pt 1fr;
+        gap: 12pt;
+        padding: 0;
+        break-inside: avoid;
+
+        &__period {
+            padding: 0;
+            color: #555;
+        }
+
+        &__company {
+            color: $accent;
+        }
+
+        &__points {
+            margin-top: 4pt;
+            gap: 2pt;
+            color: #222;
+        }
+
+        &__stack {
+            margin-top: 4pt;
+        }
+    }
+
+    .tag {
+        padding: 0;
+        background: none;
+        color: #555;
+        font-size: 9pt;
+
+        &:not(:last-child)::after {
+            content: " ·";
+        }
+    }
+
+    .creds__from {
+        color: #555;
+    }
+
+    .contacts {
+        padding-top: 8pt;
+        min-height: 0;
+        display: block;
+        text-align: left;
+
+        &__mail {
+            margin: 0 0 4pt;
+        }
+
+        &__email {
+            font-size: 11pt;
+            color: #111;
+            border: 0;
+        }
+
+        &__links {
+            justify-content: flex-start;
+            gap: 4pt 12pt;
+        }
+    }
+
+    .pill {
+        padding: 0;
+        border: 0;
+        background: none;
+        color: #111;
+        font-size: 10pt;
+
+        &__icon {
+            width: 10pt;
+            height: 10pt;
+        }
+    }
+}

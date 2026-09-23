@@ -1,0 +1,10 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.tag {
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    color: $glow;
+    background: rgba($accent, 0.25);
+}
